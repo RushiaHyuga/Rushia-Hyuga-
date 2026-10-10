@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rushia Hyûga — Fiche de personnage</title>
+<meta name="description" content="Rushia Hyûga, kunoichi de la branche Sôke du clan Hyûga de Konoha. Fiche de personnage roleplay.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%235b4a8a' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%235b4a8a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --snow:#f6f7fb;
+  --snow-2:#eceef6;
+  --frost:#dfe2ef;
+  --ink:#1f1d2b;
+  --ink-soft:#4b4860;
+  --muted:#7c7a92;
+  --violet:#5b4a8a;
+  --violet-deep:#2e2550;
+  --lilac:#b9aedb;
+  --line:rgba(46,37,80,.14);
+  --serif:'Shippori Mincho', 'Times New Roman', serif;
+  --sans:'Zen Kaku Gothic New', system-ui, sans-serif;
+  --text-sm:clamp(.85rem,.82rem + .15vw,.95rem);
+  --text-base:clamp(1rem,.96rem + .2vw,1.1rem);
+  --text-lg:clamp(1.15rem,1.05rem + .4vw,1.35rem);
+  --text-xl:clamp(1.6rem,1.3rem + 1.2vw,2.4rem);
+  --text-2xl:clamp(2.2rem,1.6rem + 2.4vw,3.8rem);
+  --text-hero:clamp(3.2rem,2rem + 6vw,7.5rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:var(--text-base);line-height:1.75;color:var(--ink);background:var(--snow);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--lilac);color:var(--violet-deep)}
+
+#snow{position:fixed;inset:0;pointer-events:none;z-index:50}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:1rem clamp(1.2rem,4vw,3rem);background:rgba(246,247,251,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s}
+header.nav.scrolled{border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--violet-deep);font-family:var(--serif);font-weight:600;letter-spacing:.08em}
+.brand svg{width:30px;height:30px}
+nav ul{display:flex;gap:clamp(1rem,2.5vw,2.2rem);list-style:none}
+nav a{text-decoration:none;font-size:var(--text-sm);color:var(--ink-soft);letter-spacing:.1em;text-transform:uppercase;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--violet);transition:width .3s}
+nav a:hover{color:var(--violet)}
+nav a:hover::after{width:100%}
+@media (max-width:760px){nav ul{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
+  gap:clamp(2rem,5vw,5rem);padding:7rem clamp(1.2rem,5vw,5rem) 4rem;overflow:hidden;
+  background:radial-gradient(ellipse at 80% 30%,#e7e3f4 0%,transparent 55%),radial-gradient(ellipse at 10% 90%,#e9ecf5 0%,transparent 50%),var(--snow)}
+.hero-kanji{position:absolute;right:-2vw;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--serif);
+  font-size:clamp(8rem,22vw,22rem);line-height:1;color:rgba(91,74,138,.05);pointer-events:none;user-select:none;font-weight:700}
+.eyebrow{font-size:var(--text-sm);letter-spacing:.35em;text-transform:uppercase;color:var(--violet);display:flex;align-items:center;gap:.9rem}
+.eyebrow::before{content:"";width:2.5rem;height:1px;background:var(--violet)}
+.hero h1{font-family:var(--serif);font-size:var(--text-hero);font-weight:500;line-height:.95;color:var(--violet-deep);margin:1.4rem 0 1rem;letter-spacing:-.01em}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:.32em;color:var(--muted);font-weight:400;margin-top:.9rem}
+.hero .jp{font-family:var(--serif);font-size:var(--text-lg);color:var(--ink-soft);letter-spacing:.4em}
+.hero p.lead{max-width:34rem;color:var(--ink-soft);margin:1.8rem 0 2.4rem;font-size:var(--text-lg);line-height:1.7}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem}
+.tag{border:1px solid var(--line);background:rgba(255,255,255,.6);padding:.45rem 1rem;border-radius:999px;font-size:var(--text-sm);color:var(--violet-deep);letter-spacing:.05em}
+.portrait{position:relative;justify-self:center;width:min(100%,460px)}
+.portrait .frame{position:relative;border-radius:240px 240px 12px 12px;overflow:hidden;aspect-ratio:572/687;
+  box-shadow:0 40px 80px -30px rgba(46,37,80,.45),0 0 0 1px rgba(255,255,255,.8) inset}
+.portrait img{width:100%;height:100%;object-fit:cover;transform:scale(1.03);transition:transform 1.4s ease}
+.portrait:hover img{transform:scale(1.07)}
+.portrait::before{content:"";position:absolute;inset:-18px;border:1px solid var(--line);border-radius:258px 258px 20px 20px}
+.portrait .seal{position:absolute;bottom:-26px;left:-26px;width:104px;height:104px;border-radius:50%;background:var(--snow);
+  display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(46,37,80,.3);color:var(--violet)}
+.portrait .seal svg{width:70px;height:70px;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll-cue{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%);font-size:.72rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.scroll-cue::after{content:"";width:1px;height:40px;background:linear-gradient(var(--violet),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:600px){.eyebrow{letter-spacing:.2em;font-size:.75rem}}
+@media (max-width:900px){.hero{grid-template-columns:1fr;text-align:left;padding-top:6.5rem}.portrait{order:-1;width:min(80%,360px)}.scroll-cue{display:none}}
+
+/* SECTIONS */
+section{position:relative;padding:clamp(5rem,10vw,9rem) clamp(1.2rem,5vw,5rem)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2.5rem;align-items:end;margin-bottom:clamp(3rem,6vw,5rem)}
+.sec-num{font-family:var(--serif);font-size:var(--text-2xl);color:var(--lilac);line-height:1}
+.sec-head h2{font-family:var(--serif);font-size:var(--text-2xl);font-weight:500;color:var(--violet-deep);line-height:1.1}
+.sec-head h2 small{display:block;font-family:var(--sans);font-size:var(--text-sm);letter-spacing:.35em;text-transform:uppercase;color:var(--violet);margin-bottom:.8rem;font-weight:500}
+
+/* FICHE */
+.fiche{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid-id{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cell{padding:2rem 1.6rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s}
+.cell:hover{background:var(--snow)}
+.cell .k{font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.cell .v{font-family:var(--serif);font-size:var(--text-xl);color:var(--violet-deep);margin-top:.4rem;line-height:1.2}
+.cell .s{font-size:var(--text-sm);color:var(--ink-soft);margin-top:.3rem}
+@media (max-width:900px){.grid-id{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.grid-id{grid-template-columns:1fr}}
+
+/* CAPACITES */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.skill{position:relative;background:linear-gradient(180deg,#fff,rgba(255,255,255,.6));border:1px solid var(--line);border-radius:14px;padding:2.2rem 1.8rem;overflow:hidden;transition:transform .4s,box-shadow .4s}
+.skill:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(46,37,80,.35)}
+.skill .glyph{font-family:var(--serif);font-size:3rem;color:var(--violet);line-height:1;margin-bottom:1.2rem;opacity:.85}
+.skill h3{font-family:var(--serif);font-size:var(--text-lg);font-weight:600;color:var(--violet-deep)}
+.skill .jp-s{font-size:.78rem;letter-spacing:.25em;color:var(--muted);text-transform:uppercase;margin:.2rem 0 1rem}
+.skill p{font-size:var(--text-sm);color:var(--ink-soft);line-height:1.7}
+.skill.wide{grid-row:span 2;display:flex;flex-direction:column;justify-content:center;gap:1.6rem;background:linear-gradient(120deg,var(--violet-deep),#4a3b7a);color:#fff;border:none}
+.skill.wide h3,.skill.wide .glyph{color:#fff}
+.skill.wide p,.skill.wide .jp-s{color:rgba(255,255,255,.75)}
+.skill.full{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr 2fr;gap:.4rem 2rem;align-items:center}
+.skill.full .glyph{margin:0;grid-row:span 2}.skill.full p{grid-column:3;grid-row:1/span 2}.skill.full .jp-s{margin:0}
+@media (max-width:700px){.skill.full{display:block}.skill.full .glyph{margin-bottom:1.2rem}.skill.full .jp-s{margin:.2rem 0 1rem}}
+.eye{width:120px;height:120px}
+@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}.skill.wide{grid-column:span 2;grid-row:auto}}
+@media (max-width:600px){.skills{grid-template-columns:1fr}.skill.wide{grid-column:span 1}}
+
+.stats{margin-top:4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 4rem}
+.stat .row{display:flex;justify-content:space-between;font-size:var(--text-sm);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.55rem}
+.stat .row b{font-family:var(--serif);color:var(--violet-deep);letter-spacing:0;font-weight:600}
+.bar{height:6px;background:var(--frost);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lilac),var(--violet));border-radius:6px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+@media (max-width:700px){.stats{grid-template-columns:1fr}}
+
+/* PERSONNALITE */
+.perso{background:linear-gradient(180deg,var(--snow) 0%,#fff 100%)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem)}
+.col h3{font-family:var(--serif);font-size:var(--text-xl);color:var(--violet-deep);font-weight:500;margin-bottom:1.4rem}
+.col h3 em{font-style:normal;color:var(--violet)}
+.traits{list-style:none;display:grid;gap:.9rem}
+.traits li{padding:1.1rem 1.3rem;border-left:2px solid var(--lilac);background:#fff;border-radius:0 10px 10px 0;color:var(--ink-soft);font-size:var(--text-sm)}
+.traits li strong{display:block;color:var(--violet-deep);font-family:var(--serif);font-size:var(--text-base);font-weight:600}
+.traits.dark li{border-left-color:var(--violet-deep);background:var(--snow-2)}
+@media (max-width:800px){.duo{grid-template-columns:1fr}}
+
+/* HISTOIRE */
+.story{background:#fff}
+.timeline{position:relative;max-width:820px;margin:0 auto}
+.timeline::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:1px;background:linear-gradient(var(--lilac),var(--line),var(--lilac))}
+.chap{position:relative;padding-left:4.2rem;margin-bottom:4rem}
+.chap:last-child{margin-bottom:0}
+.chap::before{content:"";position:absolute;left:10px;top:.55rem;width:17px;height:17px;border-radius:50%;background:#fff;border:1px solid var(--violet);box-shadow:0 0 0 5px #fff}
+.chap::after{content:"";position:absolute;left:15px;top:1.08rem;width:7px;height:7px;border-radius:50%;background:var(--violet)}
+.chap .lbl{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--violet)}
+.chap h3{font-family:var(--serif);font-size:var(--text-xl);color:var(--violet-deep);font-weight:500;margin:.3rem 0 1.1rem;line-height:1.25}
+.chap p{color:var(--ink-soft);margin-bottom:1rem;max-width:68ch}
+.chap p.punch{font-family:var(--serif);font-size:var(--text-lg);color:var(--violet-deep);font-weight:500}
+
+/* QUOTE */
+.quote{background:var(--violet-deep);color:#fff;text-align:center;overflow:hidden}
+.quote::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 120%,rgba(185,174,219,.35),transparent 60%)}
+.quote blockquote{position:relative;font-family:var(--serif);font-size:var(--text-2xl);line-height:1.3;max-width:900px;margin:0 auto;font-weight:500}
+.quote blockquote::before{content:"「";display:block;font-size:1.4em;color:var(--lilac);line-height:1;margin-bottom:.4rem}
+.quote cite{position:relative;display:block;margin-top:2rem;font-style:normal;font-size:var(--text-sm);letter-spacing:.35em;text-transform:uppercase;color:var(--lilac)}
+
+/* OBJECTIFS */
+.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.goal{padding:2.4rem 2rem 2.4rem 0;border-bottom:1px solid var(--line)}
+.goal+.goal{padding-left:2rem;border-left:1px solid var(--line)}
+.goal .n{font-family:var(--serif);color:var(--lilac);font-size:var(--text-xl)}
+.goal h3{font-family:var(--serif);color:var(--violet-deep);font-size:var(--text-lg);font-weight:600;margin:.6rem 0 .7rem}
+.goal p{font-size:var(--text-sm);color:var(--ink-soft)}
+@media (max-width:800px){.goals{grid-template-columns:1fr}.goal,.goal+.goal{padding:2rem 0;border-left:none}}
+
+/* FINAL */
+.final{text-align:center;background:radial-gradient(ellipse at 50% 0%,#e7e3f4,transparent 60%),var(--snow)}
+.final .q{font-family:var(--serif);font-size:var(--text-xl);color:var(--violet-deep);max-width:820px;margin:0 auto;line-height:1.45;font-weight:500}
+.final .closing{margin:3rem auto 0;max-width:560px;color:var(--ink-soft)}
+.final .closing span{display:block;font-family:var(--serif);font-size:var(--text-lg);color:var(--violet-deep);margin-top:.4rem}
+footer{padding:2.5rem clamp(1.2rem,5vw,5rem);border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.8rem;color:var(--muted);letter-spacing:.1em;background:var(--snow)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.portrait .seal svg{animation:none}#snow{display:none}}
+</style>
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Rushia Hyûga — accueil">
+    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M4 20c5-7 10.5-10 16-10s11 3 16 10c-5 7-10.5 10-16 10S9 27 4 20Z" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="20" cy="20" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M20 9v4M20 27v4M11 14l2.5 2.5M29 14l-2.5 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    RUSHIA HYÛGA
+  </a>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="#fiche">Fiche</a></li>
+      <li><a href="#capacites">Capacités</a></li>
+      <li><a href="#personnalite">Personnalité</a></li>
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#voie">Sa voie</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kanji" aria-hidden="true">日向</div>
+    <div class="rv">
+      <div class="eyebrow">Clan Hyûga · Branche Sôke</div>
+      <h1>Rushia<span>HYÛGA</span></h1>
+      <div class="jp" lang="ja">日向 ルシア</div>
+      <p class="lead">Une héritière de la branche principale qui ne rêve pas d'être la plus puissante, mais d'être celle dont la présence rassure les autres.</p>
+      <div class="tags">
+        <span class="tag">Byakugan</span>
+        <span class="tag">Jûken</span>
+        <span class="tag">Doton</span>
+        <span class="tag">Iryôjutsu</span>
+        <span class="tag">Konoha</span>
+      </div>
+    </div>
+    <figure class="portrait rv">
+      <div class="frame"><img src="./assets/rushia.jpg" alt="Portrait de Rushia Hyûga : longs cheveux blancs, ornements violets et yin-yang, souriante sous la neige devant le village de Konoha." width="572" height="687"></div>
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none">
+          <defs><path id="c" d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0"/></defs>
+          <text font-family="Zen Kaku Gothic New" font-size="9.5" letter-spacing="3.2" fill="currentColor"><textPath href="#c">BYAKUGAN · 白眼 · BYAKUGAN · 白眼 ·</textPath></text>
+          <circle cx="50" cy="50" r="13" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="50" cy="50" r="4" fill="currentColor"/>
+        </svg>
+      </div>
+    </figure>
+    <div class="scroll-cue">Défiler</div>
+  </section>
+
+  <!-- FICHE -->
+  <section class="fiche" id="fiche">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">壱</div>
+        <h2><small>Fiche d'identité</small>Le registre du clan</h2>
+      </div>
+      <div class="grid-id rv">
+        <div class="cell"><div class="k">Nom</div><div class="v">Rushia Hyûga</div><div class="s" lang="ja">日向 ルシア</div></div>
+        <div class="cell"><div class="k">Âge</div><div class="v">12 ans</div><div class="s">Élève de l'Académie</div></div>
+        <div class="cell"><div class="k">Taille</div><div class="v">1 m 68</div><div class="s">Grande pour son âge</div></div>
+        <div class="cell"><div class="k">Village</div><div class="v">Konoha</div><div class="s">Pays du Feu</div></div>
+        <div class="cell"><div class="k">Clan</div><div class="v">Hyûga</div><div class="s">Branche principale — Sôke</div></div>
+        <div class="cell"><div class="k">Dôjutsu</div><div class="v">Byakugan</div><div class="s" lang="ja">白眼 — l'œil blanc</div></div>
+        <div class="cell"><div class="k">Nature de chakra</div><div class="v">Doton</div><div class="s">Terre — 土遁</div></div>
+        <div class="cell"><div class="k">Spécialités</div><div class="v">Ninjutsu · Iryôjutsu</div><div class="s">Voie du médecin-ninja</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACITES -->
+  <section id="capacites">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">弐</div>
+        <h2><small>Capacités</small>L'héritage et la volonté</h2>
+      </div>
+      <div class="skills">
+        <article class="skill wide rv">
+          <svg class="eye" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <circle cx="60" cy="60" r="56" stroke="rgba(255,255,255,.25)"/>
+            <path d="M8 60c14-20 31-30 52-30s38 10 52 30c-14 20-31 30-52 30S22 80 8 60Z" stroke="#fff" stroke-width="1.5"/>
+            <circle cx="60" cy="60" r="18" stroke="#fff" stroke-width="1.5" fill="rgba(255,255,255,.12)"/>
+            <circle cx="60" cy="60" r="6" fill="#fff"/>
+            <path d="M34 36l7 7M86 36l-7 7M60 18v10" stroke="rgba(255,255,255,.7)" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <h3>Byakugan</h3>
+            <div class="jp-s">白眼 · Dôjutsu héréditaire</div>
+            <p>Comme tout membre du clan, Rushia possède le Byakugan : une vision quasi panoramique capable de percer la matière et d'observer le réseau de chakra. Pour une future médecin-ninja, cet œil est un atout précieux — il lui permet de voir précisément où un corps souffre.</p>
+          </div>
+        </article>
+        <article class="skill rv">
+          <div class="glyph" lang="ja">柔</div>
+          <h3>Jûken</h3>
+          <div class="jp-s">Poing souple</div>
+          <p>Extrêmement forte physiquement, Rushia maîtrise le style de combat du clan, qui frappe directement le réseau de chakra de l'adversaire.</p>
+        </article>
+        <article class="skill rv">
+          <div class="glyph" lang="ja">土</div>
+          <h3>Doton</h3>
+          <div class="jp-s">Nature de chakra Terre</div>
+          <p>Une affinité stable et protectrice, à l'image de son désir d'être un appui solide pour ses camarades.</p>
+        </article>
+        <article class="skill rv">
+          <div class="glyph" lang="ja">忍</div>
+          <h3>Ninjutsu</h3>
+          <div class="jp-s">Spécialité</div>
+          <p>Elle travaille ses techniques avec acharnement, compensant par l'effort ce que d'autres obtiennent par facilité.</p>
+        </article>
+        <article class="skill rv">
+          <div class="glyph" lang="ja">医</div>
+          <h3>Iryôjutsu</h3>
+          <div class="jp-s">Techniques médicales</div>
+          <p>Sa véritable vocation : transformer sa bienveillance en compétence et maintenir ses camarades en vie.</p>
+        </article>
+        <article class="skill full rv">
+          <div class="glyph" lang="ja">気</div>
+          <h3>Réserve de chakra</h3>
+          <div class="jp-s">Endurance</div>
+          <p>Une réserve importante, idéale pour soigner longtemps et tenir lorsque les combats s'éternisent.</p>
+        </article>
+      </div>
+
+      <div class="stats rv" id="stats">
+        <div class="stat"><div class="row">Jûken / Taijutsu <b>9 / 10</b></div><div class="bar"><i data-w="90"></i></div></div>
+        <div class="stat"><div class="row">Réserve de chakra <b>8 / 10</b></div><div class="bar"><i data-w="80"></i></div></div>
+        <div class="stat"><div class="row">Iryôjutsu <b>7 / 10</b></div><div class="bar"><i data-w="70"></i></div></div>
+        <div class="stat"><div class="row">Ninjutsu <b>7 / 10</b></div><div class="bar"><i data-w="70"></i></div></div>
+        <div class="stat"><div class="row">Byakugan <b>7 / 10</b></div><div class="bar"><i data-w="70"></i></div></div>
+        <div class="stat"><div class="row">Sang-froid <b>4 / 10</b></div><div class="bar"><i data-w="40"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONNALITE -->
+  <section class="perso" id="personnalite">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">参</div>
+        <h2><small>Personnalité</small>Douceur sous la neige</h2>
+      </div>
+      <div class="duo">
+        <div class="col rv">
+          <h3>Ce qui <em>la porte</em></h3>
+          <ul class="traits">
+            <li><strong>Sociable et chaleureuse</strong>Elle va facilement vers les autres, même les inconnus, et s'intéresse sincèrement à leurs histoires.</li>
+            <li><strong>Déterminée</strong>Elle échoue, recommence, et continue d'avancer, même en se comparant à ses frères et sœurs.</li>
+            <li><strong>Profondément empathique</strong>Elle supporte très mal la souffrance des autres et accourt la première quand un camarade se blesse.</li>
+            <li><strong>Observatrice</strong>Au sein du clan, elle a appris à écouter avant de parler et à mesurer ses mots.</li>
+          </ul>
+        </div>
+        <div class="col rv">
+          <h3>Ce qu'elle doit <em>dépasser</em></h3>
+          <ul class="traits dark">
+            <li><strong>La peur</strong>Encore jeune, elle craint beaucoup de choses que le monde ninja lui imposera.</li>
+            <li><strong>La naïveté</strong>Elle aimerait croire qu'on peut toujours sauver tout le monde.</li>
+            <li><strong>Le manque de confiance</strong>Se sentir moins talentueuse que les siens pèse sur l'image qu'elle a d'elle-même.</li>
+            <li><strong>L'attachement</strong>Elle s'attache vite aux autres et pourrait avoir du mal à accepter la perte d'un camarade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTOIRE -->
+  <section class="story" id="histoire">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">四</div>
+        <h2><small>Histoire</small>Le chemin de Rushia</h2>
+      </div>
+      <div class="timeline">
+        <article class="chap rv">
+          <div class="lbl">Chapitre I</div>
+          <h3>Un nom, un honneur, un poids</h3>
+          <p>Rushia Hyûga est née au sein du prestigieux clan Hyûga de Konoha. Depuis son enfance, elle grandit dans un environnement où le nom qu'elle porte représente autant un honneur qu'un poids important. Respecté pour son histoire, son Byakugan et ses traditions, le clan impose aussi de nombreuses responsabilités.</p>
+          <p>Très tôt, elle comprend qu'elle n'est pas considérée comme l'une des enfants les plus talentueuses de sa génération. Certains de ses frères et sœurs progressent plus vite et semblent mieux correspondre aux attentes du clan. Rushia doit travailler davantage, et chaque erreur lui donne l'impression de prendre encore plus de retard.</p>
+          <p class="punch">Pourtant, elle refuse d'abandonner.</p>
+        </article>
+        <article class="chap rv">
+          <div class="lbl">Chapitre II</div>
+          <h3>Le silence des branches</h3>
+          <p>Les tensions entre les différentes branches du clan et le poids des traditions rendent parfois l'atmosphère difficile. Rushia apprend à contrôler ses émotions, à ne pas montrer ses faiblesses, à observer avant de parler et à garder certaines inquiétudes pour elle.</p>
+          <p>Mais cette pression disparaît presque entièrement auprès de ses parents et de ses camarades de l'Académie. Avec eux, elle peut redevenir simplement une enfant de douze ans — douce, sociable, curieuse des autres, loin de l'image stricte associée aux Hyûga.</p>
+        </article>
+        <article class="chap rv">
+          <div class="lbl">Chapitre III</div>
+          <h3>Les regards de Konoha</h3>
+          <p>Ses longs cheveux blancs et ses yeux de Byakugan la rendent facilement reconnaissable. Son apparence, inhabituelle même pour une Hyûga, attire méfiance ou curiosité chez certains habitants.</p>
+          <p>Au début, ces réactions la blessent. Puis elle comprend que les préjugés s'effacent quand les gens apprennent réellement à la connaître. C'est alors que naît son premier véritable objectif : se faire des amis à Konoha — des personnes auprès desquelles elle n'aurait pas besoin d'être « Rushia Hyûga », mais simplement Rushia.</p>
+        </article>
+        <article class="chap rv">
+          <div class="lbl">Chapitre IV</div>
+          <h3>La vocation de soigner</h3>
+          <p>Lorsqu'un camarade se blesse à l'entraînement, elle est parmi les premières à l'aider. Lorsqu'une personne est triste, elle cherche instinctivement à comprendre. Peu à peu, elle s'intéresse aux ninjas médecins et découvre qu'un ninja n'a pas besoin de porter le coup final pour être indispensable.</p>
+          <p>Celui qui maintient un camarade en vie peut être tout aussi important que celui qui remporte le combat. Pour Rushia, soigner ne serait pas qu'une profession : ce serait une façon de transformer sa bienveillance en véritable force.</p>
+        </article>
+        <article class="chap rv">
+          <div class="lbl">Chapitre V</div>
+          <h3>La réalité cruelle du monde ninja</h3>
+          <p>Le monde ninja ne permet pas toujours de sauver tout le monde. Une mission peut imposer des choix difficiles, un médecin peut arriver trop tard, un supérieur peut ordonner de poursuivre malgré les blessés. Parfois, sauver une personne signifie en abandonner une autre.</p>
+          <p>Rushia devra comprendre que sa volonté de sauver tout le monde ne suffira pas. Elle devra devenir plus forte, apprendre à décider et accepter que certaines pertes ne pourront pas être évitées.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <blockquote class="rv">Rushia est là. Je suis entre de bonnes mains.</blockquote>
+    <cite class="rv">Ce qu'elle veut que l'on pense d'elle</cite>
+  </section>
+
+  <!-- VOIE -->
+  <section id="voie">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">五</div>
+        <h2><small>Objectifs</small>Sa voie de kunoichi</h2>
+      </div>
+      <div class="goals rv">
+        <div class="goal"><div class="n">一</div><h3>Trouver sa place</h3><p>Se faire de vrais amis à Konoha, avec qui elle peut être elle-même, loin des responsabilités du clan.</p></div>
+        <div class="goal"><div class="n">二</div><h3>Devenir utile</h3><p>Maîtriser l'Iryôjutsu, comprendre les blessures et agir efficacement lorsque quelqu'un est en danger.</p></div>
+        <div class="goal"><div class="n">三</div><h3>Protéger</h3><p>Devenir quelqu'un dont la présence rassure — capable de rester lucide et de protéger ceux qui comptent sur elle.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <div class="wrap">
+      <p class="eyebrow rv" style="justify-content:center">La question du destin</p>
+      <p class="q rv" style="margin-top:2rem">Pour devenir une véritable Hyûga, doit-elle apprendre à mettre ses sentiments de côté… ou peut-elle prouver que sa bienveillance est elle aussi une forme de force ?</p>
+      <p class="closing rv">Peut-être moins talentueuse. Peut-être trop gentille. Peut-être encore effrayée.<span>Mais animée d'une volonté que personne ne peut lui retirer.</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>RUSHIA HYÛGA · 日向 ルシア</span>
+  <span>Personnage de roleplay — univers alternatif de Naruto</span>
+</footer>
+
+<script>
+// Nav
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+// Reveal + bars
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
+  e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w+'%');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// Snow
+(()=>{
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const c=document.getElementById('snow'),x=c.getContext('2d');let W,H,f=[];
+  const dpr=Math.min(devicePixelRatio||1,2);
+  function size(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.round(Math.min(140,W*H/11000));f=Array.from({length:n},()=>mk(true))}
+  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:-10,r:Math.random()*2.4+.6,s:Math.random()*.6+.25,d:Math.random()*Math.PI*2,o:Math.random()*.5+.35}}
+  function tick(){x.clearRect(0,0,W,H);
+    for(const p of f){p.y+=p.s;p.d+=.01;p.x+=Math.sin(p.d)*.35;
+      if(p.y>H+10){Object.assign(p,mk(false))}
+      x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+      x.fillStyle=`rgba(255,255,255,${p.o})`;x.shadowColor='rgba(91,74,138,.55)';x.shadowBlur=5;x.fill()}
+    requestAnimationFrame(tick)}
+  size();addEventListener('resize',size);tick();
+})();
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
